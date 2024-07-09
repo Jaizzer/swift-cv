@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useState } from 'react';
 
-export default function Input({ placeholder, label }) {
+export default function Input({ placeholder, label, className='' }) {
     const [status, setStatus] = useState('edit');
     const [textContent, setTextContent] = useState('');
 
@@ -34,8 +34,8 @@ export default function Input({ placeholder, label }) {
     } else if (status === 'save') {
         // Return a div containing the text that was previously provided in the input
         return (
-            <div>
-                <div className="editable-div">{textContent}</div>
+            <div className={"editable-div " + className}>
+                <div>{textContent}</div>
                 <button className="edit" onClick={handleClick}>
                     Edit
                 </button>
