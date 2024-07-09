@@ -13,23 +13,24 @@ export default function Input({ placeholder, label, className='' }) {
 
     // Toggle between 'edit' and 'save' mode depending on the type of button clicked
     function handleClick(e) {
+        e.preventDefault();
         const clickedButton = e.target;
         const newStatus = clickedButton.className;
         setStatus(newStatus);
     }
 
     if (status === 'edit') {
-        // Return an input if status is 'edit'
+        // Return a form if status is 'edit'
         return (
-            <div className="form">
+            <form>
                 <label>
                     {label + ": "}
                     <input type="text" placeholder={placeholder} value={textContent} onChange={handleChange} />
                 </label>
-                <button className="save" onClick={handleClick}>
+                <button className="save" type="submit" onClick={handleClick}>
                     Save
                 </button>
-            </div>
+            </form>
         );
     } else if (status === 'save') {
         // Return a div containing the text that was previously provided in the input
