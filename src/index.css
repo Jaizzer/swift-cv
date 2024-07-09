@@ -1,4 +1,13 @@
 .editable-div {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    justify-content: start;
+    gap: 5px;
+
     border: 1px dashed red;
     padding: 5px;
+}
+
+.editable-div button {
+    align-self: start;
 }
