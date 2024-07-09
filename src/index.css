@@ -1,4 +1,4 @@
-.editable-div {
+form, .editable-div {
     display: grid;
     grid-template-columns: repeat(2, auto);
     justify-content: start;
@@ -8,6 +8,7 @@
     padding: 5px;
 }
 
+form button, 
 .editable-div button {
     align-self: start;
 }
