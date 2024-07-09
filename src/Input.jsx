@@ -22,7 +22,7 @@ export default function Input({ placeholder, label, className='' }) {
     if (status === 'edit') {
         // Return a form if status is 'edit'
         return (
-            <form>
+            <form className={className}>
                 <label>
                     {label + ": "}
                     <input type="text" placeholder={placeholder} value={textContent} onChange={handleChange} />
