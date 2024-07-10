@@ -2,8 +2,8 @@
 import { useState } from 'react';
 
 export default function Input({ placeholder, label, className='' }) {
-    const [status, setStatus] = useState('edit');
-    const [textContent, setTextContent] = useState('');
+    const [status, setStatus] = useState('save');
+    const [textContent, setTextContent] = useState(placeholder);
 
     // Update textContent everytime the input value changes
     function handleChange(event) {
