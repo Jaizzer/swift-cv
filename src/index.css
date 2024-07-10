@@ -1,3 +1,8 @@
+
+* {
+    box-sizing: border-box;
+}
+
 form, .editable-div {
     display: grid;
     grid-template-columns: repeat(2, auto);
@@ -93,4 +98,16 @@ form button,
     width: 200px;
     height: 200px;
     border-radius: 50%;
+}
+
+form.image-link {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr auto;
+}
+
+form.image-link label {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    width: 100%;
 }
