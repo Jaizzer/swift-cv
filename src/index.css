@@ -56,13 +56,14 @@ form button,
 
 .contact {
     border: 1px solid red;
+    padding: 10px;
     display: grid;
-    gap: 5px;
+    gap: 10px;
 }
 
 .contact-item {
     display: grid;
     grid-template-columns: auto 1fr;
-    gap: 5px;
+    gap: 10px;
     align-items: center;
 }
