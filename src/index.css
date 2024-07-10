@@ -48,3 +48,7 @@ form button,
     width: 90%;
     min-height: 30px;
 }
+
+.icon {
+    width: 20px;
+}
