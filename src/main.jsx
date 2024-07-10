@@ -7,6 +7,7 @@ import Education from './Education'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <div>Website not yet completed!</div>
     <Experience></Experience>
     <Contact></Contact>
     <Education></Education>
