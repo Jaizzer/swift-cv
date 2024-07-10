@@ -116,3 +116,9 @@ form.image-link label {
     grid-template-columns: auto 1fr;
     width: 100%;
 }
+
+.name {
+    display: grid;
+    gap: 10px;
+    padding: 10px;
+}
