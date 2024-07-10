@@ -76,6 +76,18 @@ form button,
     border: 1px solid red;
 }
 
+
+.image-container {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+
+.image-link {
+    display: grid;
+    grid-template-columns: 1fr auto;
+}
+
 .profile-image {
     border: 1px solid grey;
     width: 200px;
