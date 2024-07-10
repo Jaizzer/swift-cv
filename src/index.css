@@ -75,3 +75,10 @@ form button,
     padding: 10px;
     border: 1px solid red;
 }
+
+.profile-image {
+    border: 1px solid grey;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
