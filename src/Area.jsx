@@ -1,15 +1,33 @@
+import { useState } from 'react';
+
 /* eslint-disable react/prop-types */
 export default function Area({ heading, children }) {
-    const childrenWithKey = children.map((child) => (
-        <div className="cv-area-item" key={Math.random()}>
-            {child}
-        </div>
-    ));
+    const [areaChildren, setAreaChildren] = useState(children);
+
+    function handleClick(childToDelete) {
+        setAreaChildren(areaChildren.filter((areaChild) => {
+            return areaChild !== childToDelete;
+        }))
+    }
 
     return (
         <div className="cv-area">
             <div className="heading">{heading}</div>
-            {childrenWithKey}
+            {
+                areaChildren.map((areaChild, index) => (
+                    // eslint-disable-next-line react/jsx-key
+                    <div className="cv-area-item" key={index}>
+                        {areaChild}
+                        <button className="delete" onClick={
+                            () => {
+                                handleClick(areaChild)
+                            }
+                        }>
+                            Delete
+                        </button>
+                    </div>
+                ))
+            }
         </div>
     );
 }
