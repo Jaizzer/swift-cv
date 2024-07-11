@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react';
+import { Fragment, cloneElement, useState } from 'react';
 
 /* eslint-disable react/prop-types */
 export default function Area({ heading, children }) {
@@ -27,6 +27,18 @@ export default function Area({ heading, children }) {
         setAreaChildren(newArray);
     }
 
+    // Add new child component inside Area
+    function handleAdd() {
+        // generate a unique id
+        const uniqueId = Math.floor(Math.random() * 10000000000);
+
+        // Create a new child component of the same type by cloning the first 'children
+        const newAreaChild = <Fragment key={uniqueId}>{cloneElement(children[0])}</Fragment>;
+
+        // Append the newly created area child.
+        setAreaChildren([...areaChildren, newAreaChild])
+    }
+
     return (
         <div className="cv-area">
             <div className="heading">{heading}</div>
@@ -47,6 +59,7 @@ export default function Area({ heading, children }) {
                     </div>
                 );
             })}
+            <button className="add" onClick={handleAdd}>Add</button>
         </div>
     );
 }
