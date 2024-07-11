@@ -2,6 +2,13 @@ import { Fragment, useState } from 'react';
 
 /* eslint-disable react/prop-types */
 export default function Area({ heading, children }) {
+    // If 'children' is not an array (only one), put it in an array
+    const childrenIsNotArray = !Array.isArray(children);
+    if (childrenIsNotArray) {
+        children = [children];
+    }
+
+    // Initialize state
     let [areaChildren, setAreaChildren] = useState(
         // Add unique key to children component
         children.map((areaChild) => {
