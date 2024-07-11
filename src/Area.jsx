@@ -17,7 +17,7 @@ export default function Area({ heading, children }) {
         })
     );
 
-    function handleClick(keyOfAreaChildToDelete) {
+    function handleDelete(keyOfAreaChildToDelete) {
         // Remove the area child with the matches the 'key of area child to delete'
         const newArray = areaChildren.filter((areaChild) => {
             return areaChild.key !== keyOfAreaChildToDelete;
@@ -51,7 +51,7 @@ export default function Area({ heading, children }) {
                         <button
                             className="delete"
                             onClick={() => {
-                                handleClick(areaChild.key);
+                                handleDelete(areaChild.key);
                             }}
                         >
                             Delete
