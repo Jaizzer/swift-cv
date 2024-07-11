@@ -12,7 +12,7 @@ export default function Area({ heading, children }) {
     let [areaChildren, setAreaChildren] = useState(
         // Add unique key to children component
         children.map((areaChild) => {
-            let uniqueId = Math.floor(Math.random() * 10000000000);
+            let uniqueId = generateUniqueId();
             return <Fragment key={uniqueId}>{areaChild}</Fragment>;
         })
     );
@@ -30,7 +30,7 @@ export default function Area({ heading, children }) {
     // Add new child component inside Area
     function handleAdd() {
         // generate a unique id
-        const uniqueId = Math.floor(Math.random() * 10000000000);
+        const uniqueId = generateUniqueId();
 
         // Create a new child component of the same type by cloning the first 'children
         const newAreaChild = <Fragment key={uniqueId}>{cloneElement(children[0])}</Fragment>;
@@ -62,4 +62,9 @@ export default function Area({ heading, children }) {
             <button className="add" onClick={handleAdd}>Add</button>
         </div>
     );
+}
+
+
+function generateUniqueId() {
+    return Math.floor(Math.random() * 10000000000);
 }
