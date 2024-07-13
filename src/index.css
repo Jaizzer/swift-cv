@@ -19,7 +19,7 @@
     background-color: #c2c2c2;
 }
 
-.document {
+#root div.document {
     border: 1px solid grey;
 }
 
@@ -155,7 +155,7 @@ form.image-link label {
     border: 1px solid grey;
 }
 
-.document *:not(img)  {
+.submit div {
     border-color: transparent;
 }
 
