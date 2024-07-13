@@ -46,29 +46,30 @@ export default function Area({ heading, children, className, isDeleteButtonActiv
     return (
         <div className="cv-area">
             <div className="heading">{heading}</div>
-
-            {/* {render children components with corresponding delete key} */}
-            {areaChildren.map((areaChild) => {
-                return (
-                    <div className={"cv-area-item " + className} key={areaChild.key}>
-                        <div>
-                            {areaChild}
-                            {
-                                !isSubmit && isDeleteButtonActive &&
-                                <button
-                                    className="delete"
-                                    onClick={() => {
-                                        handleDelete(areaChild.key);
-                                    }}
-                                >
-                                    {"Delete This " + heading}
-                                </button>
-                            }
+            <div className={"content " + className}>
+                {/* {render children components with corresponding delete key} */}
+                {areaChildren.map((areaChild) => {
+                    return (
+                        <div className="cv-area-item" key={areaChild.key}>
+                            <div>
+                                {areaChild}
+                                {
+                                    !isSubmit && isDeleteButtonActive &&
+                                    <button
+                                        className="delete"
+                                        onClick={() => {
+                                            handleDelete(areaChild.key);
+                                        }}
+                                    >
+                                        {"Delete This " + heading}
+                                    </button>
+                                }
+                            </div>
                         </div>
-                    </div>
-                );
-            })}
-            {!isSubmit && isAddButtonActive && <button className="add" onClick={handleAdd}>Add</button>}
+                    );
+                })}
+                {!isSubmit && isAddButtonActive && <button className="add" onClick={handleAdd}>Add</button>}
+            </div>
         </div>
     );
 }
