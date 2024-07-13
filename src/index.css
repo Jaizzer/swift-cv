@@ -293,3 +293,14 @@ button {
 #root button:hover {
     background-color: #ababab;
 } 
+
+#root button.delete:hover {
+    background-color: #ec3d3d;
+    color: white;
+}
+
+#root button.edit:hover, 
+#root button.save:hover {
+    background-color: #39c267;
+    color: white;
+}
