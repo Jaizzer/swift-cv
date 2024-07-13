@@ -57,7 +57,7 @@ export default function App() {
                     </Area>
                 </div>
             </div>
-            <button className={buttonTextContent.toLowerCase()} onClick={handleClick}>{buttonTextContent}</button>
+            <button className={buttonTextContent.toLowerCase()} onClick={handleClick}>{buttonTextContent + " Resume"}</button>
         </IsSubmitContext.Provider>
     );
 }
