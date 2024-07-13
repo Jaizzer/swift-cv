@@ -133,3 +133,20 @@ form.image-link label {
 .submit *:not(img)  {
     border-color: transparent;
 }
+
+.document {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.top-section {
+    grid-column: 1 / 3;
+}
+
+.left-section {
+    grid-column: 1 / 2;
+}
+
+.right-section {
+    grid-column: 2 / 3;
+}
