@@ -141,7 +141,7 @@ form.image-link label {
     border: 1px solid grey;
 }
 
-.submit *:not(img)  {
+.document *:not(img)  {
     border-color: transparent;
 }
 
