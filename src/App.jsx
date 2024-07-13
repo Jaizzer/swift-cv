@@ -5,8 +5,17 @@ import Name from './Name';
 import Title from './Title';
 import Contact from './Contact'
 import Experience from './Experience';
+import { useState } from 'react';
 
 export default function App() {
+    const [buttonTextContent, setButtonTextContent] = useState('Submit');
+    const [isSubmit, setIsSubmit] = useState(false);
+
+    function handleClick() {
+        setButtonTextContent((buttonTextContent === 'Submit'? 'Edit': 'Submit'));
+        setIsSubmit(!isSubmit)
+    }
+
     return (
         <>
             <div>Website not yet completed!</div>
@@ -22,6 +31,8 @@ export default function App() {
             <Area heading="Contact">
                 <Contact></Contact>
             </Area>
+
+            <button className={buttonTextContent.toLowerCase()} onClick={handleClick}>{buttonTextContent}</button>
         </>
     );
 }
