@@ -9,6 +9,11 @@
     font-family: 'Roboto', sans-serif;
 }
 
+#root {
+    display: grid;
+    gap: 10px;
+}
+
 .document {
     border: 1px solid grey;
 }
