@@ -289,3 +289,7 @@ button {
 .job-description {
     line-height: 20px;
 }
+
+#root button:hover {
+    background-color: #ababab;
+} 
