@@ -30,8 +30,10 @@ export default function App() {
             <div className="document">
                 <div className="top-section">
                     <Image></Image>
-                    <Name></Name>
-                    <Title></Title>
+                    <div className="header">
+                        <Name></Name>
+                        <Title></Title>
+                    </div>
                 </div>
                 <div id="left-section">
                     
