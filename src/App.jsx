@@ -44,8 +44,8 @@ export default function App() {
                         <Skill></Skill>
                     </Area>
                 </div>
-                <div id="right-section" className="work-experience">
-                    <Area heading="Work Experience" isDeleteButtonActive={true} isAddButtonActive={true}>
+                <div id="right-section">
+                    <Area heading="Work Experience" className="work-experience" isDeleteButtonActive={true} isAddButtonActive={true}>
                         <Experience></Experience>
                     </Area>
                 </div>
