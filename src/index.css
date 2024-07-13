@@ -34,6 +34,10 @@ form button,
     gap: 10px;
 }
 
+.skill {
+    padding: 10px;
+}
+
 .work-title,
 .company {
     grid-column: 1 / 2;
