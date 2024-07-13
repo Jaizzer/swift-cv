@@ -130,6 +130,6 @@ form.image-link label {
     padding: 10px;
 }
 
-.submit * {
+.submit *:not(img)  {
     border-color: transparent;
 }
