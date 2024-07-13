@@ -29,12 +29,12 @@ form button,
     grid-template-columns: 1fr auto;
     grid-template-rows: repeat(3, auto);
     
-    padding: 10px;
+    padding: 0px;
     gap: 10px;
 }
 
 .skill {
-    padding: 10px;
+    padding: 0px;
 }
 
 .work-title,
@@ -63,7 +63,7 @@ form button,
 
 
 .contact {
-    padding: 10px;
+    padding: 0px;
     display: grid;
     gap: 10px;
 }
@@ -79,7 +79,7 @@ form button,
     display: grid;
     gap: 10px;
 
-    padding: 10px;
+    padding: 0px;
 }
 
 
