@@ -30,7 +30,6 @@ form button,
     grid-template-rows: repeat(3, auto);
     
     padding: 10px;
-    border: 1px solid grey;
     gap: 10px;
 }
 
@@ -64,7 +63,6 @@ form button,
 
 
 .contact {
-    border: 1px solid grey;
     padding: 10px;
     display: grid;
     gap: 10px;
@@ -82,7 +80,6 @@ form button,
     gap: 10px;
 
     padding: 10px;
-    border: 1px solid grey;
 }
 
 
@@ -237,4 +234,8 @@ button {
 .editable-div div {
     display: grid;
     align-items: center;
+}
+
+.cv-area-item {
+    border: 1px solid grey;
 }
