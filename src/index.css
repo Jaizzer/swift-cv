@@ -178,7 +178,8 @@ form.image-link label {
     padding: 0px;
 }
 
-.education {
+.education,
+.experience {
     gap: 0px;
 }
 
@@ -189,4 +190,15 @@ form.image-link label {
 
 .editable-div.course {
     font-weight: 600;
+}
+
+.cv-area .editable-div.work-title,
+.cv-area .editable-div.company {
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.editable-div.working-years {
+    font-size: 20px;
+    font-weight: 500;
 }
