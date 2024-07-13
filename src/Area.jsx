@@ -1,13 +1,17 @@
-import { Fragment, cloneElement, useState } from 'react';
+import { Fragment, cloneElement, useContext, useState } from 'react';
+import { IsSubmitContext } from './IsSubmitContext';
 
 /* eslint-disable react/prop-types */
 export default function Area({ heading, children }) {
+    // Check if document is on submit status
+    const isSubmit = useContext(IsSubmitContext)
+
     // If 'children' is not an array (only one), put it in an array
     const childrenIsNotArray = !Array.isArray(children);
     if (childrenIsNotArray) {
         children = [children];
     }
-
+    
     // Initialize state
     let [areaChildren, setAreaChildren] = useState(
         // Add unique key to children component
@@ -48,18 +52,21 @@ export default function Area({ heading, children }) {
                 return (
                     <div className="cv-area-item" key={areaChild.key}>
                         {areaChild}
-                        <button
-                            className="delete"
-                            onClick={() => {
-                                handleDelete(areaChild.key);
-                            }}
-                        >
-                            Delete
-                        </button>
+                        {
+                            !isSubmit && 
+                            <button
+                                className="delete"
+                                onClick={() => {
+                                    handleDelete(areaChild.key);
+                                }}
+                            >
+                                Delete
+                            </button>
+                        }
                     </div>
                 );
             })}
-            <button className="add" onClick={handleAdd}>Add</button>
+            {!isSubmit && <button className="add" onClick={handleAdd}>Add</button>}
         </div>
     );
 }

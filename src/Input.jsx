@@ -1,9 +1,13 @@
 /* eslint-disable react/prop-types */
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { IsSubmitContext } from './IsSubmitContext';
 
 export default function Input({ placeholder, label, className='' }) {
     const [status, setStatus] = useState('save');
     const [textContent, setTextContent] = useState(placeholder);
+
+    // Check if document is on submit status
+    const isSubmit = useContext(IsSubmitContext)
 
     // Update textContent everytime the input value changes
     function handleChange(event) {
@@ -19,8 +23,8 @@ export default function Input({ placeholder, label, className='' }) {
         setStatus(newStatus);
     }
 
-    if (status === 'edit') {
-        // Return a form if status is 'edit'
+    if (status === 'edit' && !isSubmit) {
+        // Return a form if status is 'edit' and document is not on submit status
         return (
             <form className={className}>
                 <label>
@@ -32,15 +36,19 @@ export default function Input({ placeholder, label, className='' }) {
                 </button>
             </form>
         );
-    } else if (status === 'save') {
+    } else if (status === 'save' || isSubmit) {
         // Return a div containing the text that was previously provided in the input
         return (
             <div className={"editable-div " + className}>
                 <div>{textContent}</div>
-                <button className="edit" onClick={handleClick}>
-                    Edit
-                </button>
+                {/* Hide buttons if document is in submit status */}
+                { 
+                    (!isSubmit) && 
+                    <button className="edit" onClick={handleClick}>
+                        Edit
+                    </button>
+                }
             </div>
         );
-    }
+    } 
 }

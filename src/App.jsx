@@ -6,6 +6,7 @@ import Title from './Title';
 import Contact from './Contact'
 import Experience from './Experience';
 import { useState } from 'react';
+import { IsSubmitContext } from './IsSubmitContext';
 
 export default function App() {
     const [buttonTextContent, setButtonTextContent] = useState('Submit');
@@ -17,7 +18,7 @@ export default function App() {
     }
 
     return (
-        <>
+        <IsSubmitContext.Provider value={isSubmit}>
             <div>Website not yet completed!</div>
             <Image></Image>
             <Name></Name>
@@ -33,6 +34,6 @@ export default function App() {
             </Area>
 
             <button className={buttonTextContent.toLowerCase()} onClick={handleClick}>{buttonTextContent}</button>
-        </>
+        </IsSubmitContext.Provider>
     );
 }
