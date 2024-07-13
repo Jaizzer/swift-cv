@@ -35,16 +35,24 @@ export default function App() {
                     
                     <Area heading="Education" className="education" isDeleteButtonActive={true} isAddButtonActive={true}>
                         <Education></Education>
+                        <Education></Education>
+                        <Education></Education>
                     </Area>
                     <Area heading="Contact" className="contact" isDeleteButtonActive={false} isAddButtonActive={false}>
                         <Contact></Contact>
                     </Area>
                     <Area heading="Skill" className="skills" isDeleteButtonActive={true} isAddButtonActive={true}>
                         <Skill></Skill>
+                        <Skill></Skill>
+                        <Skill></Skill>
+                        <Skill></Skill>
                     </Area>
                 </div>
                 <div id="right-section">
                     <Area heading="Work Experience" className="work-experience" isDeleteButtonActive={true} isAddButtonActive={true}>
+                        <Experience></Experience>
+                        <Experience></Experience>
+                        <Experience></Experience>
                         <Experience></Experience>
                     </Area>
                 </div>
