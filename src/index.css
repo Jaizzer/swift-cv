@@ -177,3 +177,16 @@ form.image-link label {
 .editable-div {
     padding: 0px;
 }
+
+.education {
+    gap: 0px;
+}
+
+.editable-div.institution {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.editable-div.course {
+    font-weight: 600;
+}
