@@ -2,7 +2,7 @@ import { Fragment, cloneElement, useContext, useState } from 'react';
 import { IsSubmitContext } from './IsSubmitContext';
 
 /* eslint-disable react/prop-types */
-export default function Area({ heading, children, className }) {
+export default function Area({ heading, children, className, isDeleteButtonActive, isAddButtonActive }) {
     // Check if document is on submit status
     const isSubmit = useContext(IsSubmitContext)
 
@@ -54,7 +54,7 @@ export default function Area({ heading, children, className }) {
                         <div>
                             {areaChild}
                             {
-                                !isSubmit &&
+                                !isSubmit && isDeleteButtonActive &&
                                 <button
                                     className="delete"
                                     onClick={() => {
@@ -68,7 +68,7 @@ export default function Area({ heading, children, className }) {
                     </div>
                 );
             })}
-            {!isSubmit && <button className="add" onClick={handleAdd}>Add</button>}
+            {!isSubmit && isAddButtonActive && <button className="add" onClick={handleAdd}>Add</button>}
         </div>
     );
 }
