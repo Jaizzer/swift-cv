@@ -68,7 +68,7 @@ export default function Area({ heading, children, className, isDeleteButtonActiv
                         </div>
                     );
                 })}
-                {!isSubmit && isAddButtonActive && <button className="add" onClick={handleAdd}>Add</button>}
+                {!isSubmit && isAddButtonActive && <button className="add" onClick={handleAdd}>{"Add " + heading}</button>}
             </div>
         </div>
     );
