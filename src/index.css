@@ -183,6 +183,22 @@ form.image-link label {
     gap: 0px;
 }
 
+.editable-div.first-name {
+    font-size: 50px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.editable-div.last-name {
+    font-size: 50px;
+    text-transform: uppercase;
+}
+
+.header .editable-div.work-title {
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
 .editable-div.institution {
     font-size: 20px;
     font-weight: 600;
