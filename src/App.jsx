@@ -34,17 +34,17 @@ export default function App() {
                 </div>
                 <div id="left-section">
                     
-                    <Area heading="Education">
+                    <Area heading="Education" className="education">
                         <Education></Education>
                     </Area>
-                    <Area heading="Contact">
+                    <Area heading="Contact" className="contact">
                         <Contact></Contact>
                     </Area>
-                    <Area heading="Skills">
+                    <Area heading="Skills" className="skills">
                         <Skill></Skill>
                     </Area>
                 </div>
-                <div id="right-section">
+                <div id="right-section" className="work-experience">
                     <Area heading="Work Experience">
                         <Experience></Experience>
                     </Area>

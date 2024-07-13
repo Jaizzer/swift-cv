@@ -2,7 +2,7 @@ import { Fragment, cloneElement, useContext, useState } from 'react';
 import { IsSubmitContext } from './IsSubmitContext';
 
 /* eslint-disable react/prop-types */
-export default function Area({ heading, children }) {
+export default function Area({ heading, children, className }) {
     // Check if document is on submit status
     const isSubmit = useContext(IsSubmitContext)
 
@@ -50,7 +50,7 @@ export default function Area({ heading, children }) {
             {/* {render children components with corresponding delete key} */}
             {areaChildren.map((areaChild) => {
                 return (
-                    <div className="cv-area-item" key={areaChild.key}>
+                    <div className={"cv-area-item " + className} key={areaChild.key}>
                         {areaChild}
                         {
                             !isSubmit && 
