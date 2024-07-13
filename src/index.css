@@ -160,10 +160,12 @@ form.image-link label {
 #left-section {
     grid-column: 1 / 2;
     background-color: grey;
+    padding: 10px;
 }
 
 #right-section {
     grid-column: 2 / 3;
+    padding: 10px;
 }
 
 .heading {
