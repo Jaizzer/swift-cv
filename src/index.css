@@ -165,3 +165,9 @@ form.image-link label {
 #right-section {
     grid-column: 2 / 3;
 }
+
+.heading {
+    background-color: black;
+    color: white;
+    padding: 5px 15px;
+}
