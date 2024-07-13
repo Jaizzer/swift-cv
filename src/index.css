@@ -131,6 +131,10 @@ form.image-link label {
     padding: 10px;
 }
 
+.cv-area-item > div {
+    border: 1px solid grey;
+}
+
 .submit *:not(img)  {
     border-color: transparent;
 }
@@ -241,6 +245,5 @@ button {
 }
 
 .cv-area-item {
-    border: 1px solid grey;
     padding: 10px;
 }
