@@ -61,7 +61,7 @@ export default function Area({ heading, children, className }) {
                                         handleDelete(areaChild.key);
                                     }}
                                 >
-                                    Delete
+                                    {"Delete This " + heading}
                                 </button>
                             }
                         </div>
