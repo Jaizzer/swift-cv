@@ -40,7 +40,7 @@ export default function App() {
                     <Area heading="Contact" className="contact">
                         <Contact></Contact>
                     </Area>
-                    <Area heading="Skills" className="skills">
+                    <Area heading="Skill" className="skills">
                         <Skill></Skill>
                     </Area>
                 </div>
