@@ -15,6 +15,13 @@ export default function App() {
     function handleClick() {
         setButtonTextContent((buttonTextContent === 'Submit'? 'Edit': 'Submit'));
         setIsSubmit(!isSubmit)
+        
+        // Add or remove root 'submit' class depending on documents submit status
+        if (!isSubmit) {
+            document.querySelector('#root').classList.add('submit');
+        } else {
+            document.querySelector('#root').classList.remove('submit');
+        }
     }
 
     return (
