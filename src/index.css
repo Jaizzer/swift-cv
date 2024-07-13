@@ -249,9 +249,12 @@ button {
     display: grid;
 }
 
-.content.education,
-.content.work-experience {
+.content.education {
     gap: 15px;
+}
+
+.content.work-experience {
+    gap: 20px;
 }
 
 .content.skills {
