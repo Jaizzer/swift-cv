@@ -260,3 +260,8 @@ button {
 .content.skills {
     gap: 10px;
 }
+
+.heading {
+    font-size: 20px;
+    font-weight: 500;
+}
