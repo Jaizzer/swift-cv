@@ -26,20 +26,28 @@ export default function App() {
 
     return (
         <IsSubmitContext.Provider value={isSubmit}>
-            <div>Website not yet completed!</div>
-            <Image></Image>
-            <Name></Name>
-            <Title></Title>
-            <Area heading="Education">
-                <Education></Education>
-            </Area>
-            <Area heading="Work Experience">
-                <Experience></Experience>
-            </Area>
-            <Area heading="Contact">
-                <Contact></Contact>
-            </Area>
-
+            {/* <div>Website not yet completed!</div> */}
+            <div className="document">
+                <div className="top-section">
+                    <Image></Image>
+                    <Name></Name>
+                    <Title></Title>
+                </div>
+                <div id="left-section">
+                    
+                    <Area heading="Education">
+                        <Education></Education>
+                    </Area>
+                    <Area heading="Contact">
+                        <Contact></Contact>
+                    </Area>
+                </div>
+                <div id="right-section">
+                    <Area heading="Work Experience">
+                        <Experience></Experience>
+                    </Area>
+                </div>
+            </div>
             <button className={buttonTextContent.toLowerCase()} onClick={handleClick}>{buttonTextContent}</button>
         </IsSubmitContext.Provider>
     );
