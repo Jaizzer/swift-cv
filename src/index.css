@@ -173,3 +173,7 @@ form.image-link label {
     color: white;
     padding: 5px 15px;
 }
+
+.editable-div {
+    padding: 0px;
+}
