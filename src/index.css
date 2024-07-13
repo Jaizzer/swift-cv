@@ -65,7 +65,7 @@ form button,
 .contact {
     padding: 0px;
     display: grid;
-    gap: 10px;
+    gap: 20px;
 }
 
 .contact-item {
@@ -247,4 +247,13 @@ button {
 .content {
     padding: 10px;
     display: grid;
+}
+
+.content.education,
+.content.work-experience {
+    gap: 15px;
+}
+
+.content.skills {
+    gap: 10px;
 }
