@@ -1,8 +1,7 @@
 import Education from './Education';
 import Area from './Area';
 import Image from './Image';
-import Name from './Name';
-import Title from './Title';
+import Header from './Header';
 import Contact from './Contact'
 import Experience from './Experience';
 import { useState } from 'react';
@@ -30,10 +29,7 @@ export default function App() {
             <div className="document">
                 <div className="top-section">
                     <Image></Image>
-                    <div className="header">
-                        <Name></Name>
-                        <Title></Title>
-                    </div>
+                    <Header></Header>
                 </div>
                 <div id="left-section">
                     
