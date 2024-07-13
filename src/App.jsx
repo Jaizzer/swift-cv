@@ -4,6 +4,7 @@ import Image from './Image';
 import Header from './Header';
 import Contact from './Contact'
 import Experience from './Experience';
+import Skill from './Skills';
 import { useState } from 'react';
 import { IsSubmitContext } from './IsSubmitContext';
 
@@ -38,6 +39,9 @@ export default function App() {
                     </Area>
                     <Area heading="Contact">
                         <Contact></Contact>
+                    </Area>
+                    <Area heading="Skills">
+                        <Skill></Skill>
                     </Area>
                 </div>
                 <div id="right-section">
