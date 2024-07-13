@@ -26,7 +26,6 @@ export default function App() {
 
     return (
         <IsSubmitContext.Provider value={isSubmit}>
-            {/* <div>Website not yet completed!</div> */}
             <div className="document">
                 <div className="top-section">
                     <Image></Image>
