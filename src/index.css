@@ -233,3 +233,8 @@ button {
     border: 0px;
     font-weight: 600;
 }   
+
+.editable-div div {
+    display: grid;
+    align-items: center;
+}
