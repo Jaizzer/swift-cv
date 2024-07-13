@@ -183,6 +183,10 @@ form.image-link label {
     gap: 0px;
 }
 
+.header {
+    padding: 10px;
+}
+
 .editable-div.first-name {
     font-size: 50px;
     font-weight: 600;
