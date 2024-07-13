@@ -244,6 +244,7 @@ button {
     text-align: justify;
 }
 
-.cv-area-item {
+.content {
     padding: 10px;
+    display: grid;
 }
