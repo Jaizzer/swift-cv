@@ -236,6 +236,10 @@ button {
     align-items: center;
 }
 
+.editable-div.job-description {
+    text-align: justify;
+}
+
 .cv-area-item {
     border: 1px solid grey;
 }
