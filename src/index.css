@@ -9,6 +9,10 @@
     font-family: 'Roboto', sans-serif;
 }
 
+.document {
+    border: 1px solid grey;
+}
+
 form, .editable-div {
     display: grid;
     grid-template-columns: repeat(2, auto);
