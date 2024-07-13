@@ -129,3 +129,7 @@ form.image-link label {
     border: 1px solid red;
     padding: 10px;
 }
+
+.submit * {
+    border-color: transparent;
+}
