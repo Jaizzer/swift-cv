@@ -51,18 +51,20 @@ export default function Area({ heading, children, className }) {
             {areaChildren.map((areaChild) => {
                 return (
                     <div className={"cv-area-item " + className} key={areaChild.key}>
-                        {areaChild}
-                        {
-                            !isSubmit && 
-                            <button
-                                className="delete"
-                                onClick={() => {
-                                    handleDelete(areaChild.key);
-                                }}
-                            >
-                                Delete
-                            </button>
-                        }
+                        <div>
+                            {areaChild}
+                            {
+                                !isSubmit &&
+                                <button
+                                    className="delete"
+                                    onClick={() => {
+                                        handleDelete(areaChild.key);
+                                    }}
+                                >
+                                    Delete
+                                </button>
+                            }
+                        </div>
                     </div>
                 );
             })}
