@@ -69,8 +69,8 @@ export default function App() {
             const lastPage = pdf.internal.getNumberOfPages()
             pdf.deletePage(lastPage);    
 
-            // Open pdf in new tab
-            window.open(pdf.output('bloburl'))
+            // Download pdf in new tab
+            pdf.save("cv.pdf")
         });
     }
 
