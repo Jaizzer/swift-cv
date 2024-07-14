@@ -31,6 +31,28 @@ export default function App() {
 
         // Add submit class to document for styling purpose
         cv.classList.add('submit');
+
+        // Preserve the 'bold' effect by relying on bold tag since jsPDF does not recognize font-weight stylings
+        [
+            ...cv.querySelectorAll('.first-name > div'),
+            ...cv.querySelectorAll('.work-title > div'),
+            ...cv.querySelectorAll('.company > div'),
+            ...cv.querySelectorAll('.working-years > div'),
+            ...cv.querySelectorAll('.institution > div'),
+            ...cv.querySelectorAll('.course > div'),
+            ...cv.querySelectorAll('.heading'),
+        ].forEach(element => {
+            // Create div with text content that are inside <b> tag
+            const boldElement = document.createElement('b');
+            boldElement.textContent = element.textContent;
+            const newDiv = document.createElement('div');
+            newDiv.className = element.className;
+            newDiv.appendChild(boldElement);
+
+            // Replace the old element that relies on font-weight styling by new one that uses <b> tag
+            const parent = element.parentElement;
+            parent.replaceChild(newDiv, element);
+        })
         
         // Get document's dimension
         const cvWidth = cv.clientWidth;
