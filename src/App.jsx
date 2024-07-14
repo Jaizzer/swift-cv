@@ -18,9 +18,9 @@ export default function App() {
         
         // Add or remove root 'submit' class depending on documents submit status
         if (!isSubmit) {
-            document.querySelector('#root').classList.add('submit');
+            document.querySelector('.document').classList.add('submit');
         } else {
-            document.querySelector('#root').classList.remove('submit');
+            document.querySelector('.document').classList.remove('submit');
         }
     }
 
