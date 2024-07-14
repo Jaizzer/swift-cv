@@ -35,7 +35,7 @@ export default function App() {
         // Preserve the 'bold' effect by relying on bold tag since jsPDF does not recognize font-weight stylings
         [
             ...cv.querySelectorAll('.first-name > div'),
-            ...cv.querySelectorAll('.work-title > div'),
+            ...cv.querySelectorAll('.cv-area .work-title > div'),
             ...cv.querySelectorAll('.company > div'),
             ...cv.querySelectorAll('.working-years > div'),
             ...cv.querySelectorAll('.institution > div'),
