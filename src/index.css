@@ -304,3 +304,7 @@ button {
     background-color: #39c267;
     color: white;
 }
+
+body {
+    width: 8.5in;
+}
