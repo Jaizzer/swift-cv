@@ -7,6 +7,7 @@ import Experience from './Experience';
 import Skill from './Skills';
 import { useState } from 'react';
 import { IsSubmitContext } from './IsSubmitContext';
+import jsPDF from 'jspdf';
 
 export default function App() {
     const [buttonTextContent, setButtonTextContent] = useState('Submit');
@@ -22,6 +23,33 @@ export default function App() {
         } else {
             document.querySelector('.document').classList.remove('submit');
         }
+    }
+
+    async function createPDF() {
+        // Get the document element
+        const cv = document.querySelector('.document');
+
+        // Add submit class to document for styling purpose
+        cv.classList.add('submit');
+        
+        // Get document's dimension
+        const cvWidth = cv.clientWidth;
+        const cvHeight = cv.clientHeight;
+
+        // Create pdf document
+        const pdf = new jsPDF('p', 'px', [cvWidth, cvHeight]);
+
+        // Add pdf title
+        pdf.setProperties({title: "cv"});
+        
+        pdf.html(cv).then(() => {
+            // Remove the last page that is empty
+            const lastPage = pdf.internal.getNumberOfPages()
+            pdf.deletePage(lastPage);    
+
+            // Open pdf in new tab
+            window.open(pdf.output('bloburl'))
+        });
     }
 
     return (
@@ -58,6 +86,7 @@ export default function App() {
                 </div>
             </div>
             <button className={buttonTextContent.toLowerCase()} onClick={handleClick}>{buttonTextContent + " Resume"}</button>
+            <button className="download" onClick={createPDF}>Download Resume</button>
         </IsSubmitContext.Provider>
     );
 }
