@@ -76,6 +76,8 @@ export default function App() {
 
     return (
         <IsSubmitContext.Provider value={isSubmit}>
+            <button className={buttonTextContent.toLowerCase()} onClick={handleClick}>{buttonTextContent + " Resume"}</button>
+            <button className="download" onClick={createPDF}>Download Resume</button>
             <div className="document">
                 <div className="top-section">
                     <Image></Image>
@@ -107,8 +109,6 @@ export default function App() {
                     </Area>
                 </div>
             </div>
-            <button className={buttonTextContent.toLowerCase()} onClick={handleClick}>{buttonTextContent + " Resume"}</button>
-            <button className="download" onClick={createPDF}>Download Resume</button>
         </IsSubmitContext.Provider>
     );
 }
