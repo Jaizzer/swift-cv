@@ -308,3 +308,8 @@ button {
  .document {
     width: 8.5in;
  }
+
+ #root {
+    display: grid;
+    justify-content: center;
+ }
