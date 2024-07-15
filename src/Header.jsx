@@ -5,7 +5,7 @@ export default function Header() {
         <div className="header">
             <Input placeholder="John" label="First name" className="first-name"></Input>
             <Input placeholder="Smith" label="Last name" className="last-name"></Input>
-            <Input placeholder="Software Engineer" label="Work Title" className="work-title"></Input>
+            <Input placeholder="Full Stack Developer" label="Work Title" className="work-title"></Input>
         </div>
     )
 }
