@@ -312,12 +312,13 @@ button {
 }
 
  .document {
-    width: 8.5in;
+    width: 100%;
     min-height: 11in;
     grid-template-rows: auto 1fr;
  }
 
  #root {
+    width: 8.5in;
     display: grid;
     justify-content: center;
  }
