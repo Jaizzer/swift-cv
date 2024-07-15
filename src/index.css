@@ -404,3 +404,24 @@ textarea {
  #root textarea {
     border: 1px solid black;
  }
+
+ #right-section, 
+ #left-section {
+    padding-right: 25px;
+    padding-left: 25px;
+ }
+
+ #left-section {
+    display: grid;
+    gap: 20px;
+    grid-template-rows: auto auto 1fr;
+ }
+
+ #right-section .content.work-experience{
+    gap: 30px;
+ }
+
+ .header {
+    padding-left: 25px;
+ }
+ 
