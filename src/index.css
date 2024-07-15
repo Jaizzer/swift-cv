@@ -429,3 +429,7 @@ textarea {
     overflow: scroll;
 }
 
+
+.skill input {
+    width: 100px;
+}
