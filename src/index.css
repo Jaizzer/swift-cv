@@ -310,6 +310,7 @@ button {
 
  .document {
     width: 8.5in;
+    grid-template-rows: auto 1fr;
  }
 
  #root {
