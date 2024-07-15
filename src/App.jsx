@@ -84,7 +84,7 @@ export default function App() {
     return (
         <IsSubmitContext.Provider value={isSubmit}>
             <button className={buttonTextContent.toLowerCase()} onClick={handleClick}>{buttonTextContent + " Resume"}</button>
-            <button className="download" onClick={createPDF}>Download Resume</button>
+            { isSubmit && <button className="download" onClick={createPDF}>Download Resume</button>}
             <div className="document edit">
                 <div className='guideline letter'><div className="size">8.5x11</div></div>
                 <div className='guideline long'><div className="size">8.5x13</div></div>
