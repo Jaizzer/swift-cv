@@ -425,3 +425,6 @@ textarea {
     padding-left: 25px;
  }
  
+#root {    
+    overflow: scroll;
+}
