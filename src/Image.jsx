@@ -28,7 +28,7 @@ export default function Image() {
         // Return a form if status is 'edit'
         return (
             <div className="image-container">
-                <img src={link} alt="profile image" className="profile-image" />
+                <div className="circle-frame"><img src={link} alt="profile image" className="profile-image" /></div>
                 <form className="image-link">
                     <label>
                         {'Link: '}
@@ -38,13 +38,13 @@ export default function Image() {
                         Save
                     </button>
                 </form>
-            </div>
+                </div>
         );
     } else if (status === 'save' || isSubmit) {
         // Return an editable photo container if status is save
         return (
             <div className="image-container">
-                <img src={link} alt="profile image" className="profile-image" />
+                <div className="circle-frame"><img src={link} alt="profile image" className="profile-image" /></div>
                 {   
                     !isSubmit &&
                     <button className="edit" onClick={handleClick}>
