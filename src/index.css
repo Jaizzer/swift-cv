@@ -124,14 +124,10 @@ form button,
     grid-template-columns: 1fr auto;
 }
 
-.circle-frame {
-    width: 200px;
-    height: 200px;
+.profile-image {
+    object-fit: contain;
     border-radius: 50%;
-    overflow: hidden;
-    display: grid;
-    justify-content: center;
-    align-items: center;
+    width: 160px;
 }
 
 form.image-link {
