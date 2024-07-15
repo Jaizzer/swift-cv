@@ -61,7 +61,7 @@ export default function Area({ heading, children, className, isDeleteButtonActiv
                                             handleDelete(areaChild.key);
                                         }}
                                     >
-                                        {"Delete This " + heading}
+                                        Delete
                                     </button>
                                 }
                             </div>
