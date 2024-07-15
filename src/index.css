@@ -219,18 +219,18 @@ form.image-link label {
 }
 
 .editable-div.first-name {
-    font-size: 50px;
+    font-size: 35px;
     font-weight: 600;
     text-transform: uppercase;
 }
 
 .editable-div.last-name {
-    font-size: 50px;
+    font-size: 35px;
     text-transform: uppercase;
 }
 
 .header .editable-div.work-title {
-    font-size: 20px;
+    font-size: 15px;
     text-transform: uppercase;
 }
 
