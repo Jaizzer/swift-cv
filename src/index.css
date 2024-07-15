@@ -390,3 +390,8 @@ textarea {
 #right-section *{
     border: 0px;
  }
+
+ label {
+    display: grid;
+    align-content: center;
+ }
