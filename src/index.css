@@ -433,3 +433,8 @@ textarea {
 .skill input {
     width: 100px;
 }
+
+.edit .job-description {
+    grid-template-rows: 1fr auto;
+    grid-template-columns: 1fr;
+}
