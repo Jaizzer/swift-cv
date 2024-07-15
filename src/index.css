@@ -395,3 +395,9 @@ textarea {
     display: grid;
     align-content: center;
  }
+
+
+ #root input, 
+ #root textarea {
+    border: 1px solid black;
+ }
