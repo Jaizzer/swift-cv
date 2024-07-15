@@ -361,3 +361,23 @@ textarea {
     width: 432px;
     height: 101px;
  }
+
+ .edit .cv-area div:not(.contact) .cv-area-item > div {
+    display: grid;
+    grid-template-rows: 1fr; 
+    gap: 5px;
+ }
+
+ .edit .skills .cv-area-item div {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 5px;
+ }
+
+ .edit .editable-div {
+    align-items: center;
+ }
+
+ .contact .editable-div {
+    justify-content: space-between;
+ }
