@@ -449,5 +449,10 @@ textarea {
 }
 
 .top-section > div {
-    padding-top: 20px;
+    padding: 25px;
+}
+
+#left-section,
+#right-section {
+    padding-top: 0px;
 }
