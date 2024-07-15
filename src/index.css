@@ -318,3 +318,41 @@ button {
     display: grid;
     justify-content: center;
  }
+
+.guideline {
+    display: none;
+}
+
+ .submit .guideline {
+    display: block;
+    z-index: 1000;
+    position: absolute;
+    display: grid;
+    justify-content: end;
+    align-content: end;
+ }
+
+ .submit .letter {
+    width: 8.5in;
+    height: 11in;
+    border: 3px dotted #d22484;
+ }
+
+ .submit .long {
+    width: 8.5in;
+    height: 13in;
+    border: 3px dotted #16a9ed;
+ }
+
+ .submit .legal {
+    width: 8.5in;
+    height: 14in;
+    border: 3px dotted #00fb71;
+ }
+
+ .submit .size {
+    font-size: 20px;
+    border: 1px dotted black;
+    padding: 5px;
+    background-color: white;
+ }

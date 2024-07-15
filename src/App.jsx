@@ -32,6 +32,11 @@ export default function App() {
         // Add submit class to document for styling purpose
         cv.classList.add('submit');
 
+        // Remove paper guidelines
+        cv.querySelectorAll('.guideline').forEach(guideline => {
+            cv.removeChild(guideline);
+        });
+
         // Preserve the 'bold' effect by relying on bold tag since jsPDF does not recognize font-weight stylings
         [
             ...cv.querySelectorAll('.first-name > div'),
@@ -79,6 +84,9 @@ export default function App() {
             <button className={buttonTextContent.toLowerCase()} onClick={handleClick}>{buttonTextContent + " Resume"}</button>
             <button className="download" onClick={createPDF}>Download Resume</button>
             <div className="document">
+                <div className='guideline letter'><div className="size">8.5x11</div></div>
+                <div className='guideline long'><div className="size">8.5x13</div></div>
+                <div className='guideline legal'><div className="size">8.5x14</div></div>
                 <div className="top-section">
                     <Image></Image>
                     <Header></Header>
