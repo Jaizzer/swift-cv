@@ -381,3 +381,12 @@ textarea {
  .contact .editable-div {
     justify-content: space-between;
  }
+
+.top-section, 
+.top-section *,
+#left-section, 
+#left-section *,
+#right-section,  
+#right-section *{
+    border: 0px;
+ }
