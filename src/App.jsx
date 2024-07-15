@@ -6,23 +6,23 @@ import Contact from './Contact'
 import Experience from './Experience';
 import Skill from './Skills';
 import { useState } from 'react';
-import { IsSubmitContext } from './IsSubmitContext';
+import { IsFinalizeContext } from './IsFinalizeContext';
 import jsPDF from 'jspdf';
 
 export default function App() {
-    const [buttonTextContent, setButtonTextContent] = useState('Submit');
-    const [isSubmit, setIsSubmit] = useState(false);
+    const [buttonTextContent, setButtonTextContent] = useState('Finalize');
+    const [isFinalize, setIsFinalize] = useState(false);
 
     function handleClick() {
-        setButtonTextContent((buttonTextContent === 'Submit'? 'Edit': 'Submit'));
-        setIsSubmit(!isSubmit)
+        setButtonTextContent((buttonTextContent === 'Finalize'? 'Edit': 'Finalize'));
+        setIsFinalize(!isFinalize)
         
-        // Add or remove root 'submit' class depending on documents submit status
-        if (!isSubmit) {
+        // Add or remove root 'finalize' class depending on documents finalize status
+        if (!isFinalize) {
             document.querySelector('.document').classList.remove('edit');
-            document.querySelector('.document').classList.add('submit');
+            document.querySelector('.document').classList.add('finalize');
         } else {
-            document.querySelector('.document').classList.remove('submit');
+            document.querySelector('.document').classList.remove('finalize');
             document.querySelector('.document').classList.add('edit');
         }
     }
@@ -31,8 +31,8 @@ export default function App() {
         // Get the document element
         const cv = document.querySelector('.document');
 
-        // Add submit class to document for styling purpose
-        cv.classList.add('submit');
+        // Add finalize class to document for styling purpose
+        cv.classList.add('finalize');
 
         // Remove paper guidelines
         cv.querySelectorAll('.guideline').forEach(guideline => {
@@ -82,9 +82,9 @@ export default function App() {
     }
 
     return (
-        <IsSubmitContext.Provider value={isSubmit}>
+        <IsFinalizeContext.Provider value={isFinalize}>
             <button className={buttonTextContent.toLowerCase()} onClick={handleClick}>{buttonTextContent + " Resume"}</button>
-            { isSubmit && <button className="download" onClick={createPDF}>Download Resume</button>}
+            { isFinalize && <button className="download" onClick={createPDF}>Download Resume</button>}
             <div className="document edit">
                 <div className='guideline letter'><div className="size">8.5x11</div></div>
                 <div className='guideline long'><div className="size">8.5x13</div></div>
@@ -119,6 +119,6 @@ export default function App() {
                     </Area>
                 </div>
             </div>
-        </IsSubmitContext.Provider>
+        </IsFinalizeContext.Provider>
     );
 }

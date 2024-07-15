@@ -1,13 +1,13 @@
 /* eslint-disable react/prop-types */
 import { useContext, useState } from 'react';
-import { IsSubmitContext } from './IsSubmitContext';
+import { IsFinalizeContext } from './IsFinalizeContext';
 
 export default function Input({ placeholder, label, className='', textArea=false }) {
     const [status, setStatus] = useState('save');
     const [textContent, setTextContent] = useState(placeholder);
 
-    // Check if document is on submit status
-    const isSubmit = useContext(IsSubmitContext)
+    // Check if document is on finalize status
+    const isFinalize = useContext(IsFinalizeContext)
 
     // Update textContent everytime the input value changes
     function handleChange(event) {
@@ -23,8 +23,8 @@ export default function Input({ placeholder, label, className='', textArea=false
         setStatus(newStatus);
     }
 
-    if (status === 'edit' && !isSubmit) {
-        // Return a form if status is 'edit' and document is not on submit status
+    if (status === 'edit' && !isFinalize) {
+        // Return a form if status is 'edit' and document is not on finalize status
         return (
             <form className={className}>
                 <label>
@@ -32,19 +32,19 @@ export default function Input({ placeholder, label, className='', textArea=false
                     { !textArea && <input type="text" placeholder={placeholder} value={textContent} onChange={handleChange}/> }
                     { textArea && <textarea type="text" placeholder={placeholder} value={textContent} onChange={handleChange}></textarea> }
                 </label>
-                <button className="save" type="submit" onClick={handleClick}>
+                <button className="save" type="finalize" onClick={handleClick}>
                     Save
                 </button>
             </form>
         );
-    } else if (status === 'save' || isSubmit) {
+    } else if (status === 'save' || isFinalize) {
         // Return a div containing the text that was previously provided in the input
         return (
             <div className={"editable-div " + className}>
                 <div>{textContent}</div>
-                {/* Hide buttons if document is in submit status */}
+                {/* Hide buttons if document is in finalize status */}
                 { 
-                    (!isSubmit) && 
+                    (!isFinalize) && 
                     <button className="edit" onClick={handleClick}>
                         Edit
                     </button>

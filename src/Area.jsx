@@ -1,10 +1,10 @@
 import { Fragment, cloneElement, useContext, useState } from 'react';
-import { IsSubmitContext } from './IsSubmitContext';
+import { IsFinalizeContext } from './IsFinalizeContext';
 
 /* eslint-disable react/prop-types */
 export default function Area({ heading, children, className, isDeleteButtonActive, isAddButtonActive }) {
-    // Check if document is on submit status
-    const isSubmit = useContext(IsSubmitContext)
+    // Check if document is on finalize status
+    const isFinalize = useContext(IsFinalizeContext)
 
     // If 'children' is not an array (only one), put it in an array
     const childrenIsNotArray = !Array.isArray(children);
@@ -54,7 +54,7 @@ export default function Area({ heading, children, className, isDeleteButtonActiv
                             <div>
                                 {areaChild}
                                 {
-                                    !isSubmit && isDeleteButtonActive &&
+                                    !isFinalize && isDeleteButtonActive &&
                                     <button
                                         className="delete"
                                         onClick={() => {
@@ -68,7 +68,7 @@ export default function Area({ heading, children, className, isDeleteButtonActiv
                         </div>
                     );
                 })}
-                {!isSubmit && isAddButtonActive && <button className="add" onClick={handleAdd}>{"Add " + heading}</button>}
+                {!isFinalize && isAddButtonActive && <button className="add" onClick={handleAdd}>{"Add " + heading}</button>}
             </div>
         </div>
     );

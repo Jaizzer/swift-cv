@@ -1,9 +1,9 @@
 import { useContext, useState } from 'react';
-import { IsSubmitContext } from './IsSubmitContext';
+import { IsFinalizeContext } from './IsFinalizeContext';
 
 export default function Image() {
-    // Check if document is on submit status
-    const isSubmit = useContext(IsSubmitContext);
+    // Check if document is on finalize status
+    const isFinalize = useContext(IsFinalizeContext);
     
     const [status, setStatus] = useState('save');
     const [link, setLink] = useState(
@@ -24,7 +24,7 @@ export default function Image() {
         setStatus(newStatus);
     }
 
-    if (status === 'edit' && !isSubmit) {
+    if (status === 'edit' && !isFinalize) {
         // Return a form if status is 'edit'
         return (
             <div className="image-container">
@@ -34,19 +34,19 @@ export default function Image() {
                         {'Link: '}
                         <input type="text" placeholder="www.image.com" value={link} onChange={handleChange} />
                     </label>
-                    <button className="save" type="submit" onClick={handleClick}>
+                    <button className="save" type="finalize" onClick={handleClick}>
                         Save
                     </button>
                 </form>
             </div>
         );
-    } else if (status === 'save' || isSubmit) {
+    } else if (status === 'save' || isFinalize) {
         // Return an editable photo container if status is save
         return (
             <div className="image-container">
                 <img src={link} alt="profile image" className="profile-image" />
                 {   
-                    !isSubmit &&
+                    !isFinalize &&
                     <button className="edit" onClick={handleClick}>
                         Change Photo
                     </button>
