@@ -9,7 +9,7 @@ export default function Experience() {
             <Input
                 textArea={true}
                 label="Description"
-                placeholder="I developed and maintained scalable web applications, enhancing user experience and system performance. I collaborated with cross-functionalteams to design and implement innovative solutions, utilizing Agile methodologies to ensure timely and efficient project delivery. I also conducted thorough code reviews and implemented best practices to maintain high standards of code quality."
+                placeholder="I developed and maintained scalable web applications, enhancing user experience and system performance. I collaborated with cross-functionalteams to design and implement innovative solutions, utilizing Agile methodologies to ensure timely and efficient project delivery."
                 className="job-description"
             ></Input>
         </div>
