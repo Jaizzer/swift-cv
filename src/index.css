@@ -9,14 +9,10 @@
     font-family: 'Roboto', sans-serif;
 }
 
-body {
-    display: grid;
-    justify-content: center;
-}
-
 #root {
     display: grid;
     gap: 10px;
+    margin: auto;
 }
 
 
