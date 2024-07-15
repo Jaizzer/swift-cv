@@ -165,7 +165,7 @@ form.image-link label {
 
 .document {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 296.9px 1fr;
 }
 
 .top-section {
@@ -428,3 +428,4 @@ textarea {
 #root {    
     overflow: scroll;
 }
+
