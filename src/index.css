@@ -447,3 +447,7 @@ textarea {
 .last-name {
     word-break: break-word;
 }
+
+.top-section > div {
+    padding-top: 20px;
+}
