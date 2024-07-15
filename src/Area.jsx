@@ -4,14 +4,14 @@ import { IsFinalizeContext } from './IsFinalizeContext';
 /* eslint-disable react/prop-types */
 export default function Area({ heading, children, className, isDeleteButtonActive, isAddButtonActive }) {
     // Check if document is on finalize status
-    const isFinalize = useContext(IsFinalizeContext)
+    const isFinalize = useContext(IsFinalizeContext);
 
     // If 'children' is not an array (only one), put it in an array
     const childrenIsNotArray = !Array.isArray(children);
     if (childrenIsNotArray) {
         children = [children];
     }
-    
+
     // Initialize state
     let [areaChildren, setAreaChildren] = useState(
         // Add unique key to children component
@@ -40,21 +40,20 @@ export default function Area({ heading, children, className, isDeleteButtonActiv
         const newAreaChild = <Fragment key={uniqueId}>{cloneElement(children[0])}</Fragment>;
 
         // Append the newly created area child.
-        setAreaChildren([...areaChildren, newAreaChild])
+        setAreaChildren([...areaChildren, newAreaChild]);
     }
 
     return (
         <div className="cv-area">
             <div className="heading">{heading}</div>
-            <div className={"content " + className}>
+            <div className={'content ' + className}>
                 {/* {render children components with corresponding delete key} */}
                 {areaChildren.map((areaChild) => {
                     return (
                         <div className="cv-area-item" key={areaChild.key}>
                             <div>
                                 {areaChild}
-                                {
-                                    !isFinalize && isDeleteButtonActive &&
+                                {!isFinalize && isDeleteButtonActive && (
                                     <button
                                         className="delete"
                                         onClick={() => {
@@ -63,17 +62,20 @@ export default function Area({ heading, children, className, isDeleteButtonActiv
                                     >
                                         Delete
                                     </button>
-                                }
+                                )}
                             </div>
                         </div>
                     );
                 })}
-                {!isFinalize && isAddButtonActive && <button className="add" onClick={handleAdd}>{"Add " + heading}</button>}
+                {!isFinalize && isAddButtonActive && (
+                    <button className="add" onClick={handleAdd}>
+                        {'Add ' + heading}
+                    </button>
+                )}
             </div>
         </div>
     );
 }
-
 
 function generateUniqueId() {
     return Math.floor(Math.random() * 10000000000);

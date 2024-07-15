@@ -2,12 +2,12 @@
 import { useContext, useState } from 'react';
 import { IsFinalizeContext } from './IsFinalizeContext';
 
-export default function Input({ placeholder, label, className='', textArea=false }) {
+export default function Input({ placeholder, label, className = '', textArea = false }) {
     const [status, setStatus] = useState('save');
     const [textContent, setTextContent] = useState(placeholder);
 
     // Check if document is on finalize status
-    const isFinalize = useContext(IsFinalizeContext)
+    const isFinalize = useContext(IsFinalizeContext);
 
     // Update textContent everytime the input value changes
     function handleChange(event) {
@@ -28,9 +28,9 @@ export default function Input({ placeholder, label, className='', textArea=false
         return (
             <form className={className}>
                 <label>
-                    {label + ": "}
-                    { !textArea && <input type="text" placeholder={placeholder} value={textContent} onChange={handleChange}/> }
-                    { textArea && <textarea type="text" placeholder={placeholder} value={textContent} onChange={handleChange}></textarea> }
+                    {label + ': '}
+                    {!textArea && <input type="text" placeholder={placeholder} value={textContent} onChange={handleChange} />}
+                    {textArea && <textarea type="text" placeholder={placeholder} value={textContent} onChange={handleChange}></textarea>}
                 </label>
                 <button className="save" type="finalize" onClick={handleClick}>
                     Save
@@ -40,16 +40,15 @@ export default function Input({ placeholder, label, className='', textArea=false
     } else if (status === 'save' || isFinalize) {
         // Return a div containing the text that was previously provided in the input
         return (
-            <div className={"editable-div " + className}>
+            <div className={'editable-div ' + className}>
                 <div>{textContent}</div>
                 {/* Hide buttons if document is in finalize status */}
-                { 
-                    (!isFinalize) && 
+                {!isFinalize && (
                     <button className="edit" onClick={handleClick}>
                         Edit
                     </button>
-                }
+                )}
             </div>
         );
-    } 
+    }
 }

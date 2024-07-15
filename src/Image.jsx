@@ -4,7 +4,7 @@ import { IsFinalizeContext } from './IsFinalizeContext';
 export default function Image() {
     // Check if document is on finalize status
     const isFinalize = useContext(IsFinalizeContext);
-    
+
     const [status, setStatus] = useState('save');
     const [link, setLink] = useState(
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTY7MUmh1RzEs_HxN1gBUW_2H_v5W3hbuT0F_BKVypVfiR_WazXQBb9_dDlUecKw7vvy3U&usqp=CAU'
@@ -45,12 +45,11 @@ export default function Image() {
         return (
             <div className="image-container">
                 <img src={link} alt="profile image" className="profile-image" />
-                {   
-                    !isFinalize &&
+                {!isFinalize && (
                     <button className="edit" onClick={handleClick}>
                         Change Photo
                     </button>
-                }
+                )}
             </div>
         );
     }

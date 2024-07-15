@@ -1,4 +1,4 @@
-import Input from "./Input";
+import Input from './Input';
 
 export default function Header() {
     return (
@@ -7,5 +7,5 @@ export default function Header() {
             <Input placeholder="Smith" label="Last name" className="last-name"></Input>
             <Input placeholder="Full Stack Developer" label="Work Title" className="work-title"></Input>
         </div>
-    )
+    );
 }
