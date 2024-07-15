@@ -356,3 +356,8 @@ button {
     padding: 5px;
     background-color: white;
  }
+
+textarea {
+    width: 432px;
+    height: 101px;
+ }
