@@ -2,7 +2,7 @@
 import { useContext, useState } from 'react';
 import { IsSubmitContext } from './IsSubmitContext';
 
-export default function Input({ placeholder, label, className='' }) {
+export default function Input({ placeholder, label, className='', textArea=false }) {
     const [status, setStatus] = useState('save');
     const [textContent, setTextContent] = useState(placeholder);
 
@@ -29,7 +29,8 @@ export default function Input({ placeholder, label, className='' }) {
             <form className={className}>
                 <label>
                     {label + ": "}
-                    <input type="text" placeholder={placeholder} value={textContent} onChange={handleChange} />
+                    { !textArea && <input type="text" placeholder={placeholder} value={textContent} onChange={handleChange}/> }
+                    { textArea && <textarea type="text" placeholder={placeholder} value={textContent} onChange={handleChange}></textarea> }
                 </label>
                 <button className="save" type="submit" onClick={handleClick}>
                     Save
