@@ -438,3 +438,10 @@ textarea {
     grid-template-rows: 1fr auto;
     grid-template-columns: 1fr;
 }
+
+.contact-item .editable-div div,
+.editable-div.skill div,
+.first-name,
+.last-name {
+    word-break: break-word;
+}
