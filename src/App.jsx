@@ -19,9 +19,11 @@ export default function App() {
         
         // Add or remove root 'submit' class depending on documents submit status
         if (!isSubmit) {
+            document.querySelector('.document').classList.remove('edit');
             document.querySelector('.document').classList.add('submit');
         } else {
             document.querySelector('.document').classList.remove('submit');
+            document.querySelector('.document').classList.add('edit');
         }
     }
 
@@ -83,7 +85,7 @@ export default function App() {
         <IsSubmitContext.Provider value={isSubmit}>
             <button className={buttonTextContent.toLowerCase()} onClick={handleClick}>{buttonTextContent + " Resume"}</button>
             <button className="download" onClick={createPDF}>Download Resume</button>
-            <div className="document">
+            <div className="document edit">
                 <div className='guideline letter'><div className="size">8.5x11</div></div>
                 <div className='guideline long'><div className="size">8.5x13</div></div>
                 <div className='guideline legal'><div className="size">8.5x14</div></div>
