@@ -477,3 +477,14 @@ body {
 .document {
     background-color: white;
 }
+
+
+#root > button {
+    padding: 10px;
+    font-size: 20px;
+}
+
+#root button {
+    background-color: #afafaf;
+    color: black;
+}
