@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext, useRef, useState } from 'react';
 import { IsFinalizeContext } from './IsFinalizeContext';
 import placeHolderImagePath from './assets/avatar.png'
 
@@ -9,10 +9,14 @@ export default function Image() {
     const [status, setStatus] = useState('save');
     const [link, setLink] = useState(placeHolderImagePath);
 
-    // Update link everytime the input value changes
-    function handleChange(event) {
-        const updatedInput = event.target;
-        setLink(updatedInput.value);
+    // Create reference to the file input
+    const imageUploadRef = useRef();
+
+    // Update link everytime the file input value changes
+    function handleChange() {
+        const uploadedFile = imageUploadRef.current.files[0];
+        const cachedURL = URL.createObjectURL(uploadedFile);        
+        setLink(cachedURL);
     }
 
     // Toggle between 'edit' and 'save' mode depending on the type of button clicked
@@ -29,10 +33,9 @@ export default function Image() {
             <div className="image-container">
                 <img src={link} className="profile-image" />
                 <form className="image-link">
-                    <label>
-                        {'Link: '}
-                        <input type="text" placeholder="www.image.com" value={link} onChange={handleChange} />
-                    </label>
+                    {/* Hide the original input element and access it via the 'Upload Photo' button */}
+                    <input type="file" onChange={handleChange} id='upload' ref={imageUploadRef} accept="image/png, image/gif, image/jpeg" hidden/>
+                    <button type="button" onClick={ () => { document.getElementById('upload').click()} }>Upload Photo</button>
                     <button className="save" type="finalize" onClick={handleClick}>
                         Save
                     </button>
