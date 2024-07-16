@@ -1,14 +1,13 @@
 import { useContext, useState } from 'react';
 import { IsFinalizeContext } from './IsFinalizeContext';
+import placeHolderImagePath from './assets/avatar.png'
 
 export default function Image() {
     // Check if document is on finalize status
     const isFinalize = useContext(IsFinalizeContext);
 
     const [status, setStatus] = useState('save');
-    const [link, setLink] = useState(
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTY7MUmh1RzEs_HxN1gBUW_2H_v5W3hbuT0F_BKVypVfiR_WazXQBb9_dDlUecKw7vvy3U&usqp=CAU'
-    );
+    const [link, setLink] = useState(placeHolderImagePath);
 
     // Update link everytime the input value changes
     function handleChange(event) {
@@ -28,7 +27,7 @@ export default function Image() {
         // Return a form if status is 'edit'
         return (
             <div className="image-container">
-                <img src={link} alt="profile image" className="profile-image" />
+                <img src={link} className="profile-image" />
                 <form className="image-link">
                     <label>
                         {'Link: '}
