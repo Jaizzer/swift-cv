@@ -43,7 +43,7 @@ export default function Image() {
         // Return an editable photo container if status is save
         return (
             <div className="image-container">
-                <img src={link} alt="profile image" className="profile-image" />
+                <img src={link} className="profile-image" />
                 {!isFinalize && (
                     <button className="edit" onClick={handleClick}>
                         Change Photo
