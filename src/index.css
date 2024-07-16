@@ -462,3 +462,8 @@ label {
 #left-section .editable-div.skill button {
     align-self: center;
 }
+
+#right-section,
+#left-section {
+    padding-bottom: 45px;
+}
