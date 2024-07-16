@@ -32,7 +32,7 @@ export default function Input({ placeholder, label, className = '', textArea = f
                     {!textArea && <input type="text" placeholder={placeholder} value={textContent} onChange={handleChange} />}
                     {textArea && <textarea type="text" placeholder={placeholder} value={textContent} onChange={handleChange}></textarea>}
                 </label>
-                <button className="save" type="finalize" onClick={handleClick}>
+                <button className="save" type="submit" onClick={handleClick}>
                     Save
                 </button>
             </form>
