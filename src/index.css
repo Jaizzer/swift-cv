@@ -133,7 +133,8 @@ form button,
 form.image-link {
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: auto auto;
+    justify-content: center;
     gap: 10px;
 }
 
@@ -307,7 +308,8 @@ button {
 }
 
 #root button.edit:hover,
-#root button.save:hover {
+#root button.save:hover, 
+#root button.photo-uploader:hover {
     background-color: #39c267;
     color: white;
 }

@@ -35,7 +35,7 @@ export default function Image() {
                 <form className="image-link">
                     {/* Hide the original input element and access it via the 'Upload Photo' button */}
                     <input type="file" onChange={handleChange} id='upload' ref={imageUploadRef} accept="image/png, image/gif, image/jpeg" hidden/>
-                    <button type="button" onClick={ () => { document.getElementById('upload').click()} }>Upload Photo</button>
+                    <button className="photo-uploader" type="button" onClick={ () => { document.getElementById('upload').click()} }>Upload Photo</button>
                     <button className="save" type="finalize" onClick={handleClick}>
                         Save
                     </button>
