@@ -309,7 +309,8 @@ button {
 
 #root button.edit:hover,
 #root button.save:hover,
-#root button.photo-uploader:hover {
+#root button.photo-uploader:hover,
+#root > button:hover {
     background-color: #39c267;
     color: white;
 }
@@ -466,4 +467,8 @@ label {
 #right-section,
 #left-section {
     padding-bottom: 45px;
+}
+
+body {
+    background-color: #4a4949;
 }
