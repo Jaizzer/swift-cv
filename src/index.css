@@ -308,7 +308,7 @@ button {
 }
 
 #root button.edit:hover,
-#root button.save:hover, 
+#root button.save:hover,
 #root button.photo-uploader:hover {
     background-color: #39c267;
     color: white;
@@ -459,6 +459,6 @@ label {
     padding-top: 0px;
 }
 
-#left-section .editable-div.skill button{
+#left-section .editable-div.skill button {
     align-self: center;
 }

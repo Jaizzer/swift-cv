@@ -1,6 +1,6 @@
 import { useContext, useRef, useState } from 'react';
 import { IsFinalizeContext } from './IsFinalizeContext';
-import placeHolderImagePath from './assets/avatar.png'
+import placeHolderImagePath from './assets/avatar.png';
 
 export default function Image() {
     // Check if document is on finalize status
@@ -15,7 +15,7 @@ export default function Image() {
     // Update link everytime the file input value changes
     function handleChange() {
         const uploadedFile = imageUploadRef.current.files[0];
-        const cachedURL = URL.createObjectURL(uploadedFile);        
+        const cachedURL = URL.createObjectURL(uploadedFile);
         setLink(cachedURL);
     }
 
@@ -34,8 +34,16 @@ export default function Image() {
                 <img src={link} className="profile-image" />
                 <form className="image-link">
                     {/* Hide the original input element and access it via the 'Upload Photo' button */}
-                    <input type="file" onChange={handleChange} id='upload' ref={imageUploadRef} accept="image/png, image/gif, image/jpeg" hidden/>
-                    <button className="photo-uploader" type="button" onClick={ () => { document.getElementById('upload').click()} }>Upload Photo</button>
+                    <input type="file" onChange={handleChange} id="upload" ref={imageUploadRef} accept="image/png, image/gif, image/jpeg" hidden />
+                    <button
+                        className="photo-uploader"
+                        type="button"
+                        onClick={() => {
+                            document.getElementById('upload').click();
+                        }}
+                    >
+                        Upload Photo
+                    </button>
                     <button className="save" type="finalize" onClick={handleClick}>
                         Save
                     </button>
