@@ -128,9 +128,6 @@ form button,
     background-image: url('./assets/image-failed-to-load.png');
     background-position: center;
     background-size: contain;
-    /* text-align: center;
-    line-height: 160px;
-    border: 1px solid black !important; */
 }
 
 form.image-link {
