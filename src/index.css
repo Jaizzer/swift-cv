@@ -371,12 +371,14 @@ textarea {
     display: grid;
     grid-template-rows: 1fr;
     gap: 5px;
+    align-items: center;
 }
 
 .edit .skills .cv-area-item div {
     display: grid;
     grid-template-columns: 1fr auto;
     gap: 5px;
+    align-content: center;
 }
 
 .edit .editable-div {
@@ -453,4 +455,8 @@ label {
 #left-section,
 #right-section {
     padding-top: 0px;
+}
+
+#left-section .editable-div.skill button{
+    align-self: center;
 }
