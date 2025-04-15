@@ -58,7 +58,7 @@ Contributions are welcome! Here are some ways you can contribute:
 If you're interested in contributing, please fork the repository and submit a pull request. For major changes, please open an issue first to discuss what you would like to change.
 
 ```bash
-git clone https://github.com/Jaizzer/cv-application.git
+git clone https://github.com/Jaizzer/swift-cv.git
 
 ```
 
